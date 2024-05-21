@@ -1,27 +1,97 @@
 // create webserver
-// create a route
-// create a function that will be called when the route is hit
-// return the comments
-// export the route
+// var express = require('express');
 
-const express = require('express');
-const router = express.Router();
-const comments = [
-    { username: 'test', comment: 'test comment', date: getRandomDate() },
-    { username: 'test2', comment: 'test comment 2', date: getRandomDate() },
-    { username: 'test3', comment: 'test comment 3', date: getRandomDate() }
-];
+// var app = express();
+// var port = 3000;
 
-function getRandomDate() {
-    const sixMonthsAgo = new Date();
-    sixMonthsAgo.setUTCMonth(sixMonthsAgo.getUTCMonth() - 6);
-    const now = new Date().getTime();
-    const randomTime = Math.floor(Math.random() * (now - sixMonthsAgo.getTime())) + sixMonthsAgo.getTime();
-    return new Date(randomTime);
-}
+// app.get('/', function(req, res) {
+//     res.send('Hello World');
+// });
 
-router.get('/comments', (req, res) => {
-    res.json(comments);
+// app.listen(port, function() {
+//     console.log('Server started on http://localhost:' + port);
+// });
+
+// Path: comments.js
+// create webserver
+var express = require('express');
+
+var app = express();
+var port = 3000;
+
+app.get('/', function(req, res) {
+    res.send('Hello World');
 });
 
-module.exports = router;
+app.get('/comments', function(req, res) {
+    res.send('This is the comments page');
+});
+
+app.listen(port, function() {
+    console.log('Server started on http://localhost:' + port);
+});
+
+// Path: comments.js
+// create webserver
+var express = require('express');
+
+var app = express();
+var port = 3000;
+
+app.get('/', function(req, res) {
+    res.send('Hello World');
+});
+
+app.get('/comments', function(req, res) {
+    res.send('This is the comments page');
+});
+
+app.get('/comments/:id', function(req, res) {
+    res.send('This is the comments page for id ' + req.params.id);
+});
+
+app.listen(port, function() {
+    console.log('Server started on http://localhost:' + port);
+});
+
+// Path: comments.js
+// create webserver
+var express = require('express');
+
+var app = express();
+var port = 3000;
+
+app.get('/', function(req, res) {
+    res.send('Hello World');
+});
+
+app.get('/comments', function(req, res) {
+    res.send('This is the comments page');
+});
+
+app.get('/comments/:id', function(req, res) {
+    res.send('This is the comments page for id ' + req.params.id);
+});
+
+app.post('/comments', function(req, res) {
+    res.send('This is the comments page');
+});
+
+app.listen(port, function() {
+    console.log('Server started on http://localhost:' + port);
+});
+
+// Path: comments.js
+// create webserver
+var express = require('express');
+
+var app = express();
+var port = 3000;
+
+app.get('/', function(req, res) {
+    res.send('Hello World');
+});
+
+app.get('/comments', function(req, res) {
+    res.send('This is the comments page');
+});
